@@ -19,8 +19,8 @@ def connect():
 
 #print(os.getenv('DB_USER')) 
 #print(os.environ)
-engine=connect()
 
+connect()
 
 # 2) Execute the SQL sentences to create your tables using the SQLAlchemy's execute function
 engine.execute(""" 
