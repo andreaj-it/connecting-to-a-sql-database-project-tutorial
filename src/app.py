@@ -53,7 +53,7 @@ engine.execute("""
         PRIMARY KEY(book_id, author_id),
         CONSTRAINT fk_book FOREIGN KEY(book_id) REFERENCES books(book_id) ON DELETE CASCADE,
         CONSTRAINT fk_author FOREIGN KEY(author_id) REFERENCES authors(author_id) ON DELETE CASCADE
-    );""")
+    );""",multi=True)
 
 # 3) Execute the SQL sentences to insert your data using the SQLAlchemy's execute function
 engine.execute("""
@@ -91,7 +91,7 @@ engine.execute("""
     INSERT INTO book_authors (book_id, author_id) values (8,4);
     INSERT INTO book_authors (book_id, author_id) values (8,4);
     INSERT INTO book_authors (book_id, author_id) values (8,4);
-""")
+""",multi=True)
 
 # 4) Use pandas to print one of the tables as dataframes using read_sql function
 authors = pd.read_sql("SELECT * FROM authors;", engine)
